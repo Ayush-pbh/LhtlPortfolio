@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,22 +10,82 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <!-- Main Body -->
     <div class="content-holder">
-        <div class="content-left-holder"></div>
-        <div class="content-right-holder"></div>
+        <div class="content-left-holder">
+            <div class="intro-text">
+                <span>A</span>
+            </div>
+            <div class="side-text">
+                <span>weekly-progress</span>
+            </div>
+        </div>
+        <div class="content-right-holder">
+        </div>
     </div>
-
+    <div class="chip-holder scrollbar-custom">        
+        <div class="chip bg-chip give-me-space" data-bg-image='framed-1.webp' data-tilt data-tilt-scale=".9" data-tilt-glare="true" data-tilt-maxglare=".5" onclick="location.href='./week-1.html';">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week 1</span>
+            </div>
+        </div>
+        
+        <div class="chip bg-chip" data-bg-image='framed-2.webp' data-tilt data-tilt data-tilt-scale=".9" data-tilt-glare="true" data-tilt-maxglare=".5" onclick="location.href='./week-2.html';">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week 2</span>
+            </div>
+        </div>
+        <div class="chip bg-chip" data-bg-image='framed-3.jpg' data-tilt data-tilt data-tilt-scale=".9" data-tilt-glare="true" data-tilt-maxglare=".5" onclick="location.href='./week-3.html';">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week 3</span>
+            </div>
+        </div>
+        <div class="chip bg-chip" data-bg-image='framed-4.webp' data-tilt data-tilt data-tilt-scale=".9" data-tilt-glare="true" data-tilt-maxglare=".5" onclick="location.href='./week-4.html';">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week 4</span>
+            </div>
+        </div>
+        <!-- <div class="chip bg-chip" data-bg-image='chip5.webp' data-tilt data-tilt data-tilt-scale=".9" data-tilt-glare="true" data-tilt-maxglare=".5">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week 5</span>
+            </div>
+        </div>
+        <div class="chip ">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week N</span>
+            </div>
+        </div>
+        <div class="chip">
+            <div class="chip-img">
+            </div>
+            <div class="chip-text">
+                <span>Week N</span>
+            </div>
+        </div> -->
+    </div>
     <!-- Navpane -->
     <div class="nav" id="navpane">
         <div id="particles-js"></div>
         <div class="links">
             <div class="link">
-                <a class="anim1" href="./index.html">-L-H-T-L</a>
-                <a class="anim1 disabled" href="#!">-weekly-progress</a>
+                <a class="anim1 " href="./index.html">-L-H-T-L</a>
+                <a class="anim1 disabled" href="#">-weekly-progress</a>
                 <a class="anim1" href="./contact.html">-contact</a>
             </div>
         </div>
@@ -41,7 +101,10 @@
             <span></span>
         </div>
     </div>
-    
+    <div class="loadanim">
+    	<span class="back"></span>
+    	<span class="front">A</span>
+    </div>
     <script src="./libs/vanilla-tilt.js"></script>
     <script src="./libs/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

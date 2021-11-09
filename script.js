@@ -19,9 +19,9 @@ function toggleNavpane(){
     else{
         overlayVisible = true
         if(finit){
-            tl.to('.pagechange', {left:'0',opacity:1, filter:'grayscale(100%)', duration: 1.5, ease:'expo'})
+            tl.to('.pagechange', {left:'0',  duration: 1, opacity:1, ease:'expo'})
             .to('.nav', {top:'0', opacity:'1', duration:0})
-            .to('.pagechange', {left:'100%', duration: 1.5, ease:'expo'})
+            .to('.pagechange', {left:'100%',opacity:0, duration:1, ease:'expo'})
             .from('.anim1',{opacity:0,x:50,duration:0.3,stagger:0.1}, '<')
             finit = false
         }
@@ -164,19 +164,31 @@ particlesJS('particles-js',
 );
 
 var count_particles, stats, update;
-// stats = new Stats;
-// stats.setMode(0);
-// stats.domElement.style.position = 'absolute';
-// stats.domElement.style.left = '0px';
-// stats.domElement.style.top = '0px';
-// document.body.appendChild(stats.domElement);
-// count_particles = document.querySelector('.js-count-particles');
-// update = function() {
-  // stats.begin();
-  // stats.end();
-  // if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-  //   count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  // }
-  // requestAnimationFrame(update);
-// };
-// requestAnimationFrame(update);
+
+// Chiping...
+let tl2 = gsap.timeline();
+function initChip() {
+  let chip = document.getElementsByClassName('bg-chip');
+  for(let i=0;i<chip.length;i++){
+    console.log(chip[i]);
+    // chip[i].style.backgroundImage='url("images/'+chip[i].dataset.bgImage+'");';
+    chip[i].style.backgroundImage="url('images/"+chip[i].dataset.bgImage+"') ";
+  }
+  tl2.to('.loadanim', {top:'-120%', duration:1, ease: 'sine'})
+  .from('.intro-text', { opacity: 0, duration: .5, ease:'ease'})
+  .from('.side-text', { opacity: 0, duration: .5, ease:'ease'})
+  .from('.loader', {transform:'translateX(-100%)', opacity:0, duration:0.5, stagger:0.4, ease:'ease'})
+  .from('.frame',{opacity:0,duration:0.5, ease:'ease'})
+  .from('.framed',{height:0, duration:0.75, ease:'expo'})
+  // .from('.chip', {transform:'scale(0.5)', duration: 1, stagger:.4, ease:'ease'});
+}
+let loadanim = gsap.timeline({ repeat:-1, yoyo:true })
+    .to('.loadanim .back' , {height:100,width:160, left: 'calc(50% - 80px)',top: 'calc(50% - 50px)', duration: .8, ease:'cric'})
+    .to('.loadanim .back' , {height:160,width:100, left: 'calc(50% - 50px)',top: 'calc(50% - 80px)', duration: .8, ease:'cric'})
+
+window.onload = ()=>{
+  // setTimeout(() => {
+    initChip();
+    loadanim.kill();  
+  // }, 2000);
+}
